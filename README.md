@@ -13,6 +13,17 @@ The real value of this approach is that we can deliver the same application valu
 
 As with every pattern, there are core ideas we have to be aware of, in order to get the real value of the pattern supply. In Hexagonal it isn't different. Here are its core ideas:
 
-- Split the application down into three parts;
+- Split the application into three parts;
 - Isolate the business rules (domain);
-- The dependency flow MUST always point to the same direction (domain) and never let the domain parts point to another place;
+- The dependency flow MUST point to the same direction (domain) and the domain MUSTN'T point to another place;
+
+## Pros
+- Isolation of business rules;
+- Change flexibility;
+- Postpone non crucial decisions;
+- Tests in isolation - test driven architecture;
+
+## Cons
+- Complexity;
+- Learning curve;
+- Keep calm - you don't need interface for everything;
