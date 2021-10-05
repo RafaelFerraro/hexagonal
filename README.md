@@ -14,8 +14,11 @@ The real value of this approach is that we can deliver the same application valu
 As with every pattern, there are core ideas we have to be aware of, in order to get the real value of the pattern supply. In Hexagonal it isn't different. Here are its core ideas:
 
 - Split the application into three parts;
-- Isolate the business rules (domain);
-- The dependency flow MUST point to the same direction (domain) and the domain MUSTN'T point to another place;
+  - WIP
+- Isolate the business rules;
+  - Simply, putting the whole business rules separately and making sure this package, module, or folder are completely isolated from the others. What I’ve seen and done in most of the examples and projects I’ve worked on, this part of the application is usually referred to as domain, a term strongly used by DDD. 
+- The dependency flow MUST always point to the inner, in this case, to the domain. Therefore, the domain MUSTN’T point to nowhere else:
+  - Here is where the Ports and Adapters come in. The ports are the interfaces that represent the actions and interactions of our application business logic has to do with the external world, and the adapters are, indeed, where the code that adapts to this external world comes in, the real adaptation of your application and the external world, where the external world are the toolings, other applications and things like that.
 
 ## Pros
 - Isolation of business rules;
