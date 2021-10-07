@@ -14,7 +14,9 @@ The real value of this approach is that we can deliver the same application valu
 As with every pattern, there are core ideas we have to be aware of, in order to get the real value of the pattern supply. In Hexagonal it isn't different. Here are its core ideas:
 
 - Split the application into three parts;
-  - WIP
+  - Primary/Driving: every layer or component in charge of receiving data from the external world, like API's, UI's, consoles, etc;
+  - Seconday/Driven: every layer or component in charge of to consume or to deliver data to the external world, like databases, external services, message brokers, etc.
+  - Domain: every piece of code that represents the business and its logics.  
 - Isolate the business rules;
   - Simply, putting the whole business rules separately and making sure this package, module, or folder are completely isolated from the others. What I’ve seen and done in most of the examples and projects I’ve worked on, this part of the application is usually referred to as domain, a term strongly used by DDD. 
 - The dependency flow MUST always point to the inner, in this case, to the domain. Therefore, the domain MUSTN’T point to nowhere else:
